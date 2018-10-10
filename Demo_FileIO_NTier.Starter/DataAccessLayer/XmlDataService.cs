@@ -31,8 +31,7 @@ namespace Demo_FileIO_NTier.DataAccessLayer
 
                 using (sr)
                 {
-                    List<Character> characterList = (List<Character>) xs.Deserialize(sr);
-                    characters = characterList;
+                    characters = (List<Character>) xs.Deserialize(sr);
                 }
             }
             catch (Exception)

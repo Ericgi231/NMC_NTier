@@ -5,7 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Demo_FileIO_NTier.Models;
-
+using System.Runtime.Serialization.Json;
+using System.Web.Script.Serialization;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace Demo_FileIO_NTier.DataAccessLayer
 {
@@ -22,18 +25,13 @@ namespace Demo_FileIO_NTier.DataAccessLayer
         {
             List<Character> characters = new List<Character>();
             string json = File.ReadAllText(_dataFilePath);
-            MemoryStream ms = new MemoryStream(Encoding.Unicode.GetBytes(json));
 
             try
             {
-                using (ms)
-                {
-                    
-                }
+                characters = JsonConvert.DeserializeObject<List<Character>>(json);
             }
             catch (Exception)
             {
-
                 throw;
             }
 
