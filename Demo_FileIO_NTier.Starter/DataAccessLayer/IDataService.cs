@@ -10,7 +10,7 @@ namespace Demo_FileIO_NTier.DataAccessLayer
 {
     interface IDataService
     {
-        IEnumerable<Character> ReadAll();
+        IEnumerable  <Character> ReadAll();
         void WriteAll(IEnumerable<Character> characters);
     }
 }

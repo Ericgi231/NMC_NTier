@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Demo_FileIO_NTier.Models;
-using System.IO;
-using System.Xml.Serialization;
-using System.Xml;
+
 
 namespace Demo_FileIO_NTier.DataAccessLayer
 {
-    class XmlDataService : IDataService
+    class JsonDataService : IDataService
     {
         private string _dataFilePath;
 
-        public XmlDataService()
+        public JsonDataService()
         {
             _dataFilePath = DataSettings.dataFilePath;
         }
@@ -22,21 +21,19 @@ namespace Demo_FileIO_NTier.DataAccessLayer
         public IEnumerable<Character> ReadAll()
         {
             List<Character> characters = new List<Character>();
+            string json = File.ReadAllText(_dataFilePath);
+            MemoryStream ms = new MemoryStream(Encoding.Unicode.GetBytes(json));
 
             try
             {
-
-                XmlSerializer xs = new XmlSerializer(typeof(List<Character>), new XmlRootAttribute("Characters"));
-                StringReader sr = new StringReader(File.ReadAllText(_dataFilePath));
-
-                using (sr)
+                using (ms)
                 {
-                    List<Character> characterList = (List<Character>) xs.Deserialize(sr);
-                    characters = characterList;
+                    
                 }
             }
             catch (Exception)
             {
+
                 throw;
             }
 

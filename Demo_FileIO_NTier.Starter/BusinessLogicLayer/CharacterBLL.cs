@@ -27,7 +27,6 @@ namespace Demo_FileIO_NTier.BusinessLogicLayer
 
             try
             {
-                _dataService = new CsvDataService();
                 _characters = _dataService.ReadAll() as List<Character>;
                 _characters.OrderBy(c => c.Id);
                 if (_characters.Count > 0)

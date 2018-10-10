@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A82307CD-4D8F-40C5-9DA7-8DE52EA510B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Demo_FileIO_NTier.Starter</RootNamespace>
-    <AssemblyName>Demo_FileIO_NTier.Starter</AssemblyName>
+    <RootNamespace>Demo_FileIO_NTier</RootNamespace>
+    <AssemblyName>Demo_FileIO_NTier</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,6 +45,7 @@
     <Compile Include="BusinessLogicLayer\CharacterBLL.cs" />
     <Compile Include="DataAccessLayer\CsvDataService.cs" />
     <Compile Include="DataAccessLayer\IDataService.cs" />
+    <Compile Include="DataAccessLayer\JsonDataService.cs" />
     <Compile Include="DataAccessLayer\XmlDataService.cs" />
     <Compile Include="Data\DataSettings.cs" />
     <Compile Include="Models\Character.cs" />
