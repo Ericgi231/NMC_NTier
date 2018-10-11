@@ -28,7 +28,8 @@ namespace Demo_FileIO_NTier.DataAccessLayer
 
             try
             {
-                
+                RootObject rootObject = JsonConvert.DeserializeObject<RootObject>(json);
+                characters = rootObject.Characters.Character;
             }
             catch (Exception)
             {

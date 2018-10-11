@@ -7,9 +7,14 @@ using System.Xml.Serialization;
 
 namespace Demo_FileIO_NTier.Models
 {
+    public class RootObject
+    {
+        public CharacterContainer Characters { get; set; }
+    }
+
     public class CharacterContainer
     {
-        public IEnumerable<Character> Characters { get; set; }
+        public List<Character> Character { get; set; }
     }
 
     public class Character
