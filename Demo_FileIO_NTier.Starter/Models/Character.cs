@@ -7,6 +7,11 @@ using System.Xml.Serialization;
 
 namespace Demo_FileIO_NTier.Models
 {
+    public class CharacterContainer
+    {
+        public IEnumerable<Character> Characters { get; set; }
+    }
+
     public class Character
     {
         public enum GenderType { NOTSPECIFIED, MALE, FEMALE }

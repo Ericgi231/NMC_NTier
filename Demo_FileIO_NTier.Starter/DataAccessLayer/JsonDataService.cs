@@ -28,7 +28,7 @@ namespace Demo_FileIO_NTier.DataAccessLayer
 
             try
             {
-                characters = JsonConvert.DeserializeObject<List<Character>>(json);
+                
             }
             catch (Exception)
             {
